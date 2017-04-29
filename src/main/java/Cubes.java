@@ -26,12 +26,13 @@ public class Cubes extends JFrame {
         listModel = new DefaultListModel<String>();
         list1.setModel(listModel);
 
-        listModel.addElement("hello");
         list1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         try {
+
             cubes_database = new Cubes_Database();
             cubes_database.connectDB();
             ResultSet rs = cubes_database.queryDB();
+
             while (rs.next()) {
 
                 StringBuilder builder = new StringBuilder();
